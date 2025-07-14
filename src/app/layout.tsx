@@ -14,7 +14,7 @@ export default function RootLayout({
   children: ReactNode
 }>) {
   return (
-    <html lang="ru">
+    <html lang="en">
       <body>
         <Header />
         <main className="p-6">
