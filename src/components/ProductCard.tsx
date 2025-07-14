@@ -1,13 +1,13 @@
 'use client'
-
-import Image from 'next/image'
 import { Product } from '@/types/types'
 
 export default function ProductCard({ product }: { product: Product }) {
+  const imageSrc = product.images[0] ?? '/image-not-found.png'
+
   return (
     <div key={product.id} className="border p-4 rounded shadow-lg">
-      <Image
-        src={'/image-not-found.png'}
+      <img
+        src={imageSrc}
         alt={product.title}
         height={760}
         width={760}
