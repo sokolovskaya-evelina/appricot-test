@@ -2,12 +2,14 @@ import { Product } from '@/types/types'
 import NotFound from '@/app/not-found'
 import ImageCarousel from '@/components/ImageCarousel'
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  return { title: `Product #${params.id}` }
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  return { title: `Product #${id}` }
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const res = await fetch(`https://api.escuelajs.co/api/v1/products/${params.id}`, {
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const res = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`, {
     cache: 'no-store',
   })
 

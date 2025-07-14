@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 import ProductCard from '@/components/ProductCard'
 import { Product } from '@/types/types'
 import Loader from '@/components/loader/Loader'
+import Notification from '@/components/Notification'
+import NoData from '@/components/NoData'
 
 export default function Home() {
   const [products, setProducts] = useState<Product[] | null>(null)
@@ -19,13 +21,19 @@ export default function Home() {
   }, [])
 
   if (loading) return <Loader />
-  if (error) return <p>Ошибка загрузки данных</p>
 
   return (
-    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-      {products?.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </div>
+    <>
+      {products ? (
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          {products?.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      ) : (
+        <NoData title="The kitten didn't find anything :-(" description="Try again later" />
+      )}
+      {error && <Notification message="Something went wrong 😞" onClose={() => setError(false)} />}
+    </>
   )
 }

@@ -52,43 +52,43 @@
 
 
 .dark {
-  --background: oklch(0.08 0 0); /* глубокий тёмный фон */
-  --foreground: oklch(0.98 0 0); /* почти белый текст */
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.98 0 0);
 
-  --card: oklch(0.12 0.01 60);  /* чуть светлее фона, нейтрально-коричневый */
+  --card: oklch(0.12 0.01 60);
   --card-foreground: oklch(0.98 0 0);
 
   --popover: oklch(0.12 0.01 60);
   --popover-foreground: oklch(0.98 0 0);
 
-  --primary: oklch(0.65 0.12 75); /* мягкий светло-рыжий */
-  --primary-foreground: oklch(0.18 0.08 40); /* соответствует $dark */
+  --primary: oklch(0.65 0.12 75);
+  --primary-foreground: oklch(0.18 0.08 40);
 
-  --secondary: oklch(0.16 0.01 60); /* слегка светлее card */
+  --secondary: oklch(0.16 0.01 60);
   --secondary-foreground: oklch(0.96 0 0);
 
   --muted: oklch(0.13 0 0);
   --muted-foreground: oklch(0.6 0.02 60);
 
-  --accent: oklch(0.2 0.02 60); /* близко к $fur-outline */
+  --accent: oklch(0.2 0.02 60);
   --accent-foreground: oklch(0.95 0 0);
 
-  --destructive: oklch(0.577 0.245 27.325); /* красный — как раньше */
+  --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
 
   --border: oklch(0.2 0 0);
   --input: oklch(0.25 0 0);
-  --ring: oklch(0.6 0.15 75); /* контур — тот же $face/primary */
+  --ring: oklch(0.6 0.15 75);
 
-  --chart-1: oklch(0.65 0.12 75);   /* светло-рыжий */
-  --chart-2: oklch(0.58 0.16 60);   /* оранжево-золотистый */
-  --chart-3: oklch(0.45 0.1 45);    /* рыже-коричневый */
-  --chart-4: oklch(0.85 0.1 100);   /* сливочно-бежевый */
-  --chart-5: oklch(0.9 0.2 80);     /* бледно-оранжевый */
+  --chart-1: oklch(0.65 0.12 75);
+  --chart-2: oklch(0.58 0.16 60);
+  --chart-3: oklch(0.45 0.1 45);
+  --chart-4: oklch(0.85 0.1 100);
+  --chart-5: oklch(0.9 0.2 80);
 
-  --sidebar: oklch(0.1 0 0); /* чуть темнее фона */
+  --sidebar: oklch(0.1 0 0);
   --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.78 0.18 75); /* как primary */
+  --sidebar-primary: oklch(0.78 0.18 75);
   --sidebar-primary-foreground: oklch(0.18 0.08 40);
   --sidebar-accent: oklch(0.2 0.02 60);
   --sidebar-accent-foreground: oklch(0.95 0 0);
