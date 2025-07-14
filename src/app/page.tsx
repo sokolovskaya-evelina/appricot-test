@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import ProductCard from '@/components/ProductCard'
 import { Product } from '@/types/types'
+import Loader from '@/components/loader/Loader'
 
 export default function Home() {
   const [products, setProducts] = useState<Product[] | null>(null)
@@ -17,7 +18,7 @@ export default function Home() {
       .finally(() => setLoading(false))
   }, [])
 
-  if (loading) return <p>Загрузка...</p>
+  if (loading) return <Loader />
   if (error) return <p>Ошибка загрузки данных</p>
 
   return (
