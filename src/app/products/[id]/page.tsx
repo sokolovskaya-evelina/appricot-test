@@ -1,3 +1,36 @@
-export default function Page() {
-  return <>product</>
+import { Product } from '@/types/types'
+import NotFound from '@/app/not-found'
+import ImageCarousel from '@/components/ImageCarousel'
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  return { title: `Product #${params.id}` }
+}
+
+export default async function Page({ params }: { params: { id: string } }) {
+  const res = await fetch(`https://api.escuelajs.co/api/v1/products/${params.id}`, {
+    cache: 'no-store',
+  })
+
+  if (!res.ok) {
+    return <NotFound />
+  }
+
+  const product: Product = await res.json()
+
+  return (
+    <div className="flex flex-col md:flex-row gap-6 mt-4">
+      <div className="rounded self-center shadow p-4 bg-white shrink-0">
+        <ImageCarousel images={product.images} alt={product.title} />
+      </div>
+      <div className="rounded shadow p-4 bg-white flex-1">
+        <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
+        <p className="text-xl">
+          <span className="text-secondary-foreground">Price:</span> {product.price} $
+        </p>
+        <p className="mt-2">
+          <span className="text-secondary-foreground">Description:</span> {product.description}
+        </p>
+      </div>
+    </div>
+  )
 }

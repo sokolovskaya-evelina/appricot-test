@@ -2,13 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import ProductCard from '@/components/ProductCard'
-
-type Product = {
-  id: number
-  title: string
-  price: number
-  images: string[]
-}
+import { Product } from '@/types/types'
 
 export default function Home() {
   const [products, setProducts] = useState<Product[] | null>(null)
