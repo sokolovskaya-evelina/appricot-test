@@ -19,10 +19,10 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   return (
     <div className="flex flex-col md:flex-row gap-6 mt-4">
-      <div className="rounded self-center shadow p-4 bg-white shrink-0">
+      <div className="rounded self-center shadow p-4 bg-secondary shrink-0">
         <ImageCarousel images={product.images} alt={product.title} />
       </div>
-      <div className="rounded shadow p-4 bg-white flex-1">
+      <div className="rounded shadow p-4 bg-secondary flex-1">
         <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
         <p className="text-xl">
           <span className="text-secondary-foreground">Price:</span> {product.price} $

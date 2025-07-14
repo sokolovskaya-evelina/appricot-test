@@ -9,10 +9,10 @@ export default function Page() {
   }).format(date)
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-2">О нас</h1>
-      <p className="mb-2">Это тестовое приложение для демонстрации работы с Next.js</p>
-      <p className="text-sm text-secondary-foreground">Страница сгенерирована: {formattedDate}</p>
+    <div className="bg-secondary p-4 rounded shadow-lg">
+      <h1 className="text-2xl font-bold mb-2">About us</h1>
+      <p className="mb-2">This is a test application to demonstrate working with Next.js</p>
+      <p className="text-sm text-secondary-foreground">Page generated at: {formattedDate}</p>
     </div>
   )
 }
