@@ -24,7 +24,13 @@ export default function ImageCarousel({ images, alt = 'Изображение' }
       >
         {images.map((src, i) => (
           <div key={i} className="min-w-full relative">
-            <img src={src} alt={`${alt} ${i + 1}`} sizes="100%" className="object-contain" />
+            <img
+              src={src}
+              alt={`${alt} ${i + 1}`}
+              sizes="100%"
+              className="object-contain"
+              onError={(e) => (e.currentTarget.src = '/image-not-found.png')}
+            />
           </div>
         ))}
       </div>

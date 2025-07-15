@@ -6,7 +6,12 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <div key={product.id} className="border p-4 rounded shadow-lg">
-      <img src={imageSrc} alt={product.title} className="w-full h-40 object-cover mb-2" />
+      <img
+        src={imageSrc}
+        alt={product.title}
+        className="w-full h-40 object-cover mb-2"
+        onError={(e) => (e.currentTarget.src = '/image-not-found.png')}
+      />
       <h2 className="text-lg font-semibold">
         <Link href={`/products/${product.id}`} className="underline hover:text-primary">
           {product.title}
