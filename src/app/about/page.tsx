@@ -1,13 +1,13 @@
-export default function Page() {
-  const date = new Date()
-  const formattedDate = new Intl.DateTimeFormat('ru-RU', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  }).format(date)
+const date = new Date()
+const formattedDate = new Intl.DateTimeFormat('ru-RU', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+}).format(date)
 
+export default function Page() {
   return (
     <div className="bg-secondary p-4 rounded shadow-lg">
       <h1 className="text-2xl font-bold mb-2">About us</h1>
